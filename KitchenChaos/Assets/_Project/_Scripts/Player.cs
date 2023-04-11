@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float playerMovementSpeed = 0.0f;
+    [Header("Player Control")]
+    [Space(8)]
+
+    [SerializeField] private float playerMoveSpeed = 7.0f;
+    [SerializeField] private float playerRotationRate = 10.0f;
     private void Update()
     {
 
@@ -27,8 +32,7 @@ public class Player : MonoBehaviour
         }
         inputVector = inputVector.normalized;
         Vector3 moveDir = new Vector3(inputVector.x, transform.position.y, inputVector.y);
-        transform.position += playerMovementSpeed * Time.deltaTime * moveDir;
-
-        Debug.Log(inputVector);
+        transform.position += playerMoveSpeed * Time.deltaTime * moveDir;
+        transform.forward = Vector3.Slerp(transform.forward, moveDir, playerRotationRate * Time.deltaTime);
     }
 }
