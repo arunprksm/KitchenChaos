@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float playerMoveSpeed = 7.0f;
     [SerializeField] private float playerRotationRate = 10.0f;
+
+    private bool isWalking = false;
     private void Update()
     {
 
@@ -32,7 +34,13 @@ public class Player : MonoBehaviour
         }
         inputVector = inputVector.normalized;
         Vector3 moveDir = new Vector3(inputVector.x, transform.position.y, inputVector.y);
+        isWalking = moveDir != Vector3.zero;
         transform.position += playerMoveSpeed * Time.deltaTime * moveDir;
         transform.forward = Vector3.Slerp(transform.forward, moveDir, playerRotationRate * Time.deltaTime);
+    }
+
+    public bool IsWalking()
+    {
+        return isWalking;
     }
 }
