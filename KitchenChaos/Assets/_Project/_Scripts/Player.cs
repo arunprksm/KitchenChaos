@@ -94,11 +94,11 @@ public class Player : MonoBehaviour
         float playerHeight = 2.0f;
         float moveDistance = playerMoveSpeed * Time.deltaTime;
         bool playerCanMove = !Physics.CapsuleCast(transform.position, transform.position + transform.up * playerHeight, playerRadius, moveDir, moveDistance);
+        transform.forward = Vector3.Slerp(transform.forward, moveDir, playerRotationRate * Time.deltaTime);
 
         if (!playerCanMove)
         {
             //Cannot move towards moveDir
-
             //Attempt only X movement
             Vector3 moveDirX = new Vector3(moveDir.x, 0, 0).normalized;
             playerCanMove = !Physics.CapsuleCast(transform.position, transform.position + transform.up * playerHeight, playerRadius, moveDirX, moveDistance);
@@ -110,7 +110,6 @@ public class Player : MonoBehaviour
             else
             {
                 //Cannot move towards moveDir
-
                 //Attempt only Z movement
                 Vector3 moveDirZ = new Vector3(0, 0, moveDir.z).normalized;
                 playerCanMove = !Physics.CapsuleCast(transform.position, transform.position + transform.up * playerHeight, playerRadius, moveDirZ, moveDistance);
@@ -127,8 +126,6 @@ public class Player : MonoBehaviour
         }
         if (playerCanMove) transform.position += moveDistance * moveDir;
         isWalking = moveDir != Vector3.zero;
-        transform.forward = Vector3.Slerp(transform.forward, moveDir, playerRotationRate * Time.deltaTime);
-        //Debug.Log(moveDir);
     }
 
     public bool IsWalking()
