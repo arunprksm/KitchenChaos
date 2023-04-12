@@ -11,13 +11,40 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float playerMoveSpeed = 7.0f;
     [SerializeField] private float playerRotationRate = 10.0f;
+
+    [Space(8)]
     [SerializeField] private GameInput gameInput = null;
+    Vector3 lastInteractDir;
+    [SerializeField] private LayerMask countersLayerMask;
 
     private bool isWalking = false;
     private void Update()
     {
+        HandleMovement();
+        HandleInteractions();
+    }
+
+    private void HandleInteractions()
+    {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
-        Vector3 moveDir = new Vector3(inputVector.x, transform.position.y, inputVector.y);
+        Vector3 moveDir = new(inputVector.x, transform.position.y, inputVector.y);
+        float interactionDistance = 2.0f;
+        if(moveDir !=  Vector3.zero) lastInteractDir = moveDir;
+
+        if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactionDistance, countersLayerMask))
+        {
+            if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
+            {
+                //Has Clear Counter
+                clearCounter.Interact();
+            }
+        }
+
+    }
+    private void HandleMovement()
+    { 
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        Vector3 moveDir = new(inputVector.x, transform.position.y, inputVector.y);
         float playerRadius = 0.7f;
         float playerHeight = 2.0f;
         float moveDistance = playerMoveSpeed * Time.deltaTime;
