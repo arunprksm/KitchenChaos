@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,6 +7,14 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance { get; private set; }
+
+    public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
+    public class OnSelectedCounterChangedEventArgs : EventArgs
+    {
+        public ClearCounter selectedCounter;
+    }
+
     [Header("Player Control")]
     [Space(8)]
 
@@ -17,8 +26,18 @@ public class Player : MonoBehaviour
     Vector3 lastInteractDir;
     [SerializeField] private LayerMask countersLayerMask;
 
+    private ClearCounter selectedCounter;
+
     private bool isWalking = false;
 
+    private void Awake()
+    {
+        if(Instance != null)
+        {
+            Debug.LogError("Duplication of Singleton class " + Instance + " is not Allowed");
+        }
+        Instance = this;
+    }
     private void Start()
     {
         gameInput.OnInteractAction += GameInput_OnInteractAction;
@@ -26,18 +45,9 @@ public class Player : MonoBehaviour
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
-        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
-        Vector3 moveDir = new(inputVector.x, transform.position.y, inputVector.y);
-        float interactionDistance = 2.0f;
-
-        if (moveDir != Vector3.zero) lastInteractDir = moveDir;
-        if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactionDistance, countersLayerMask))
+        if(selectedCounter != null)
         {
-            if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
-            {
-                //Has Clear Counter
-                clearCounter.Interact();
-            }
+            selectedCounter.Interact();
         }
     }
 
@@ -60,12 +70,24 @@ public class Player : MonoBehaviour
             {
                 //Has Clear Counter
                 //clearCounter.Interact();
+                if (clearCounter != selectedCounter)
+                {
+                    SetSelectedCounter(clearCounter);
+                }
+            }
+            else
+            {
+                SetSelectedCounter(null);
             }
         }
+        else
+        {
+            SetSelectedCounter(null);
 
+        }
     }
     private void HandleMovement()
-    { 
+    {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
         Vector3 moveDir = new(inputVector.x, transform.position.y, inputVector.y);
         float playerRadius = 0.7f;
@@ -112,5 +134,14 @@ public class Player : MonoBehaviour
     public bool IsWalking()
     {
         return isWalking;
+    }
+
+    private void SetSelectedCounter(ClearCounter _selectedCounter)
+    {
+        selectedCounter = _selectedCounter;
+        OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs
+        {
+            selectedCounter = selectedCounter
+        });
     }
 }
