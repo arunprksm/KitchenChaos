@@ -18,6 +18,29 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask countersLayerMask;
 
     private bool isWalking = false;
+
+    private void Start()
+    {
+        gameInput.OnInteractAction += GameInput_OnInteractAction;
+    }
+
+    private void GameInput_OnInteractAction(object sender, System.EventArgs e)
+    {
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        Vector3 moveDir = new(inputVector.x, transform.position.y, inputVector.y);
+        float interactionDistance = 2.0f;
+
+        if (moveDir != Vector3.zero) lastInteractDir = moveDir;
+        if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactionDistance, countersLayerMask))
+        {
+            if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
+            {
+                //Has Clear Counter
+                clearCounter.Interact();
+            }
+        }
+    }
+
     private void Update()
     {
         HandleMovement();
@@ -29,14 +52,14 @@ public class Player : MonoBehaviour
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
         Vector3 moveDir = new(inputVector.x, transform.position.y, inputVector.y);
         float interactionDistance = 2.0f;
-        if(moveDir !=  Vector3.zero) lastInteractDir = moveDir;
 
+        if (moveDir != Vector3.zero) lastInteractDir = moveDir;
         if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactionDistance, countersLayerMask))
         {
             if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
             {
                 //Has Clear Counter
-                clearCounter.Interact();
+                //clearCounter.Interact();
             }
         }
 
