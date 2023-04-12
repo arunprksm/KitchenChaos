@@ -136,6 +136,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClearCounter
       objectReference: {fileID: 0}
+    - target: {fileID: 6320025010717811632, guid: 231e5c9f5e328664bb3119eed45341a7,
+        type: 3}
+      propertyPath: kitchenObjectsSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 5cc9c5c213652574f868f9310d1368e4,
+        type: 2}
     - target: {fileID: 7892440283186202083, guid: 231e5c9f5e328664bb3119eed45341a7,
         type: 3}
       propertyPath: m_RootOrder
@@ -901,6 +907,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5247363253513472470, guid: c6fa1e8241375cc4b85816df61330e59,
         type: 3}
+    - target: {fileID: 6320025010717811632, guid: 231e5c9f5e328664bb3119eed45341a7,
+        type: 3}
+      propertyPath: kitchenObjectsSO
+      value: 
+      objectReference: {fileID: 11400000, guid: e56b3e44616f4574b9f9e6585c987b4e,
+        type: 2}
     - target: {fileID: 7892440283186202083, guid: 231e5c9f5e328664bb3119eed45341a7,
         type: 3}
       propertyPath: m_RootOrder
