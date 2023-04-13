@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IKitchenObjectParent
 {
     public static Player Instance { get; private set; }
 
@@ -26,7 +26,11 @@ public class Player : MonoBehaviour
     Vector3 lastInteractDir;
     [SerializeField] private LayerMask countersLayerMask;
 
+    [SerializeField] private Transform kitchenObjectHoldPoint;
     private ClearCounter selectedCounter;
+    private KitchenObject kitchenObject;
+
+
 
     private bool isWalking = false;
 
@@ -141,4 +145,14 @@ public class Player : MonoBehaviour
             selectedCounter = selectedCounter
         });
     }
+
+    public Transform GetKitchenObjectFollowTransform() { return kitchenObjectHoldPoint; }
+
+    public void SetKitchenObject(KitchenObject _kitchenObject) { kitchenObject = _kitchenObject; }
+
+    public KitchenObject GetKitchenObject() { return kitchenObject; }
+
+    public void ClearKitchenObject() { kitchenObject = null; }
+
+    public bool HasKitchenObject() { return kitchenObject != null; }
 }
