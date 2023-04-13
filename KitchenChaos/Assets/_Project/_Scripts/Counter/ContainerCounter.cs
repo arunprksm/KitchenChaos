@@ -9,7 +9,7 @@ public class ContainerCounter : BaseCounter
     [SerializeField] protected KitchenObjectSO kitchenObjectsSO;
     public override void Interact(Player player)
     {
-        if (!HasKitchenObject())
+        if (!player.HasKitchenObject()) //Player not carrying anything
         {
             Transform kitchenObjectTransform = Instantiate(kitchenObjectsSO.prefab);
             kitchenObjectTransform.GetComponent<KitchenObject>().SetKitchenObjectParent(player);
