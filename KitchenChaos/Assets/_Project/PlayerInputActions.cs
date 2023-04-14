@@ -190,6 +190,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""b33d1ebb-137c-4352-bcc8-f879ba0f12d3"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""6e10b379-b9b4-4eda-819c-6cfa82670671"",
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
