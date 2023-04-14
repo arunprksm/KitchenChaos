@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6993941397594936894}
   - component: {fileID: 4531572944032135494}
   - component: {fileID: 5815151871511869476}
+  - component: {fileID: 3080713559732070616}
   m_Layer: 5
   m_Name: ProgressBarUI
   m_TagString: Untagged
@@ -140,6 +141,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3080713559732070616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2763791408701382925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdab15647f3ef54f875b37da70a2954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 3
 --- !u!1 &5658301262499316048
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +605,7 @@ PrefabInstance:
     - target: {fileID: 7892440283186202083, guid: 8e1c4faea4d45254d88c781854b833bd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7892440283186202083, guid: 8e1c4faea4d45254d88c781854b833bd,
         type: 3}
@@ -601,7 +615,7 @@ PrefabInstance:
     - target: {fileID: 7892440283186202083, guid: 8e1c4faea4d45254d88c781854b833bd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 7892440283186202083, guid: 8e1c4faea4d45254d88c781854b833bd,
         type: 3}
@@ -678,7 +692,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterTopPoint: {fileID: 8648143280409198968}
-  cuttingRecipeSOArray: []
+  cuttingRecipeSOArray:
+  - {fileID: 11400000, guid: 4e7381b5bc3c0da46ac0756166e59fe0, type: 2}
+  - {fileID: 11400000, guid: 8453d55c9aceadd4798352926b39f2c3, type: 2}
+  - {fileID: 11400000, guid: ebe08575f9f9e7a48ad25102a4fa7fed, type: 2}
 --- !u!4 &3081825929403656510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7892440283186202083, guid: 8e1c4faea4d45254d88c781854b833bd,
