@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
-[CreateAssetMenu()]
+[CreateAssetMenu(fileName = "ScriptableObjects", menuName = "ScriptableObjects/KitchenObjectSO")]
+
 public class KitchenObjectSO : ScriptableObject
 {
     public Transform prefab;
