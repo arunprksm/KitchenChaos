@@ -31,7 +31,7 @@ PrefabInstance:
     - target: {fileID: 7892440283186202083, guid: 8e1c4faea4d45254d88c781854b833bd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7892440283186202083, guid: 8e1c4faea4d45254d88c781854b833bd,
         type: 3}
@@ -127,6 +127,8 @@ MonoBehaviour:
   counterTopPoint: {fileID: 3507532632781582614}
   fryingRecipeSOArray:
   - {fileID: 11400000, guid: a5ac10d377e148e4ba03d8d5257181d3, type: 2}
+  BurningRecipeSOArray:
+  - {fileID: 11400000, guid: 8a08165357b9b2441ba656ab5e335d20, type: 2}
 --- !u!4 &7092600399227574608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7892440283186202083, guid: 8e1c4faea4d45254d88c781854b833bd,
@@ -141,6 +143,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7092600399227574608}
     m_Modifications:
+    - target: {fileID: 17251720544094567, guid: 93af8b85a17635f40a5b76ed82a86c18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4589716710238282922, guid: 93af8b85a17635f40a5b76ed82a86c18,
         type: 3}
       propertyPath: m_Name
@@ -201,14 +208,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5220305274835918574, guid: 93af8b85a17635f40a5b76ed82a86c18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4589716710238282922, guid: 93af8b85a17635f40a5b76ed82a86c18,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4216739742064437064}
   m_SourcePrefab: {fileID: 100100000, guid: 93af8b85a17635f40a5b76ed82a86c18, type: 3}
+--- !u!1 &888948481157131724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4589716710238282922, guid: 93af8b85a17635f40a5b76ed82a86c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 3740203107319220582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4216739742064437064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888948481157131724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d983f3726b2030459aba1cb1c2da0a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stoveCounter: {fileID: 3655498340774333076}
+  particlesGameObject: {fileID: 8905271322433705864}
+  stoveOnGameObject: {fileID: 3736462332769370113}
 --- !u!4 &888948481157131725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4589716710238282923, guid: 93af8b85a17635f40a5b76ed82a86c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 3740203107319220582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3736462332769370113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 17251720544094567, guid: 93af8b85a17635f40a5b76ed82a86c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 3740203107319220582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8905271322433705864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5220305274835918574, guid: 93af8b85a17635f40a5b76ed82a86c18,
     type: 3}
   m_PrefabInstance: {fileID: 3740203107319220582}
   m_PrefabAsset: {fileID: 0}
@@ -220,6 +269,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7092600399227574608}
     m_Modifications:
+    - target: {fileID: 17251720544094567, guid: 93af8b85a17635f40a5b76ed82a86c18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 496015676961670754, guid: 93af8b85a17635f40a5b76ed82a86c18,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -321,6 +375,11 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4998458208842551057, guid: 93af8b85a17635f40a5b76ed82a86c18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220305274835918574, guid: 93af8b85a17635f40a5b76ed82a86c18,
         type: 3}
       propertyPath: m_IsActive
       value: 0
