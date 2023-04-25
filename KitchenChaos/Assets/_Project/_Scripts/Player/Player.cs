@@ -138,7 +138,12 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         }
         if (playerCanMove) transform.position += moveDistance * moveDir;
         isWalking = moveDir != Vector3.zero;
-        transform.forward = Vector3.Slerp(transform.forward, moveDir, playerRotationRate * Time.deltaTime);
+        if (moveDir.magnitude > 0.0f)
+        {
+            transform.forward = Vector3.Slerp(transform.forward, moveDir, playerRotationRate * Time.deltaTime);
+        }
+
+        //transform.forward = Vector3.Slerp(transform.forward, moveDir, playerRotationRate * Time.deltaTime);
     }
 
     public bool IsWalking()
