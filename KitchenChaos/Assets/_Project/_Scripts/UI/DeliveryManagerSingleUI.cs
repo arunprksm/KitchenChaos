@@ -30,6 +30,5 @@ public class DeliveryManagerSingleUI : MonoBehaviour
             iconTransfrom.gameObject.SetActive(true);
             iconTransfrom.GetComponent<Image>().sprite = kitchenObjectSO.sprite;
         }
-
     }
 }

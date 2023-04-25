@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
-[CreateAssetMenu(fileName = "ScriptableObjects", menuName = "ScriptableObjects/KitchenObjectSO")]
+[CreateAssetMenu(fileName = "ScriptableObjects", menuName = "ScriptableObjects/Kitchen/KitchenObjectSO")]
 
 public class KitchenObjectSO : ScriptableObject
 {
