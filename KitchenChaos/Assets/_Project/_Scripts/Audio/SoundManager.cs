@@ -8,6 +8,11 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance { get; private set; }
     [SerializeField] private AudioClipRefsSO audioClipRefsSO;
 
+    private float volume = 0.5f;
+    private float minVolume = 0f;
+    private float maxVolume = 1f;
+
+
     private void Awake()
     {
         Instance = this;
@@ -64,14 +69,46 @@ public class SoundManager : MonoBehaviour
     {
         PlaySound(audioClipArray[Random.Range(0, audioClipArray.Length)] as AudioClip, position, volume);
     }
-    private void PlaySound(AudioClip audioClip, Vector3 position, float volume = 1f)
+    private void PlaySound(AudioClip audioClip, Vector3 position, float volumeMultiplier = 1f)
     {
-        AudioSource.PlayClipAtPoint(audioClip, position, volume);
+        AudioSource.PlayClipAtPoint(audioClip, position, volumeMultiplier * volume);
     }
-
 
     public void PlayFootStepSound(Vector3 postion, float volume)
     {
         PlaySound(audioClipRefsSO.footSteps, postion, volume);
+    }
+
+    //public void ChangeVolume()
+    //{
+    //    volume += 0.1f;
+
+    //    if (volume > maxVolume)
+    //    {
+    //        volume = 0f;
+    //    }
+    //}
+
+    public void IncreaseVolume()
+    {
+        volume += 0.1f;
+
+        if (volume > maxVolume)
+        {
+            volume = 1f;
+        }
+    }
+    public void DecreaseVolume()
+    {
+        volume -= 0.1f;
+
+        if (volume < minVolume)
+        {
+            volume = 0f;
+        }
+    }
+    public float GetVolume()
+    {
+        return volume;
     }
 }
