@@ -45,7 +45,7 @@ public class KitchenGameManager : MonoBehaviour
                     state = State.CountDownToStart;
                     OnStateChanged?.Invoke(this, EventArgs.Empty);
                 }
-                    break;
+                break;
             case State.CountDownToStart:
                 countDownToStartTimer -= Time.deltaTime;
                 if (countDownToStartTimer < 0f)
@@ -75,7 +75,7 @@ public class KitchenGameManager : MonoBehaviour
     {
         return state == State.GamePlaying;
     }
-    
+
     public bool IsCountDownToStartActive()
     {
         return state == State.CountDownToStart;
@@ -93,5 +93,4 @@ public class KitchenGameManager : MonoBehaviour
     {
         return 1 - (gamePlayingTimer / gamePlayingTimerMax);
     }
-
 }

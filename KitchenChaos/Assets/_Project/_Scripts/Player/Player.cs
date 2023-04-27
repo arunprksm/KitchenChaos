@@ -38,7 +38,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
     private void Awake()
     {
-        if(Instance != null)
+        if (Instance != null)
         {
             Debug.LogError("Duplication of Singleton class " + Instance + " is not Allowed");
         }
