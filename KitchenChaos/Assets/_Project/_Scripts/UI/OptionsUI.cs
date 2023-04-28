@@ -19,12 +19,15 @@ public class OptionsUI : MonoBehaviour
     [SerializeField] private Button musicIncreaseButton; 
     [SerializeField] private Button musicDecreaseButton;
 
+
+    private Action onCloseButtonAction;
     private void Awake()
     {
         Instance = this;
         closeButton.onClick.AddListener(() =>
         {
             Hide();
+            onCloseButtonAction();
         });
 
         //SFX
@@ -69,9 +72,11 @@ public class OptionsUI : MonoBehaviour
         musicText.text = "Music: " + Mathf.Round(MusicManager.Instance.GetVolume() * 10f);
     }
 
-    public void Show()
+    public void Show(Action _onCloseButtonAction)
     {
+        onCloseButtonAction = _onCloseButtonAction;
         gameObject.SetActive(true);
+        sfxDecreaseButton.Select();
     }
     private void Hide()
     {
