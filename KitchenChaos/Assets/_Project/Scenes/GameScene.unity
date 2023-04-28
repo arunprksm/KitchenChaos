@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.8627451}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.9019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -987,7 +987,7 @@ GameObject:
   - component: {fileID: 133763032}
   - component: {fileID: 133763031}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveRightButtonText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.98039216}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.92156863}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1798,7 +1798,7 @@ GameObject:
   - component: {fileID: 297753545}
   - component: {fileID: 297753544}
   m_Layer: 5
-  m_Name: Button
+  m_Name: InteractAltButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2533,8 +2533,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278238975
-  m_fontColor: {r: 1, g: 0.74509805, b: 0, a: 1}
+    rgba: 4283531257
+  m_fontColor: {r: 0.9764706, g: 0.49803922, b: 0.31764707, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4257,7 +4257,7 @@ GameObject:
   - component: {fileID: 604385332}
   - component: {fileID: 604385331}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: InteractButtonText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4689,7 +4689,7 @@ GameObject:
   - component: {fileID: 714317494}
   - component: {fileID: 714317493}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveUPButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5565,7 +5565,7 @@ GameObject:
   - component: {fileID: 835186607}
   - component: {fileID: 835186606}
   m_Layer: 5
-  m_Name: Button
+  m_Name: InteractButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6423,7 +6423,7 @@ GameObject:
   - component: {fileID: 969500405}
   - component: {fileID: 969500404}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MoveLeftButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6667,7 +6667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.79607844, g: 0.25882354, b: 0.25882354, a: 1}
+  m_Color: {r: 0.91764706, g: 0.70980394, b: 0.2627451, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6979,8 +6979,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278238975
-  m_fontColor: {r: 1, g: 0.74509805, b: 0, a: 1}
+    rgba: 4291351498
+  m_fontColor: {r: 0.7921569, g: 0.827451, b: 0.78431374, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7482,7 +7482,7 @@ GameObject:
   - component: {fileID: 1138093762}
   - component: {fileID: 1138093761}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveDownButtonText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8024,7 +8024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+  m_Color: {r: 0.17254902, g: 0.22745098, b: 0.2784314, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8598,7 +8598,7 @@ GameObject:
   - component: {fileID: 1352232307}
   - component: {fileID: 1352232306}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MoveRightButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8886,7 +8886,7 @@ GameObject:
   - component: {fileID: 1409060696}
   - component: {fileID: 1409060695}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MoveDownButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9500,8 +9500,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282627562
+  m_fontColor: {r: 0.91764706, g: 0.70980394, b: 0.2627451, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9748,7 +9748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.99607843, g: 0.6431373, b: 0.49803922, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9966,7 +9966,7 @@ GameObject:
   - component: {fileID: 1648309373}
   - component: {fileID: 1648309372}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveLeftText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11691,7 +11691,7 @@ GameObject:
   - component: {fileID: 1898699148}
   - component: {fileID: 1898699147}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MoveUPButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12142,7 +12142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.24705882, g: 0.24705882, b: 0.24705882, a: 1}
+  m_Color: {r: 0.17254902, g: 0.22745098, b: 0.2784314, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12526,7 +12526,7 @@ GameObject:
   - component: {fileID: 2036239390}
   - component: {fileID: 2036239389}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: InteractAltText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
