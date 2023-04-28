@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,8 +7,10 @@ using UnityEngine.UI;
 
 public class OptionsUI : MonoBehaviour
 {
-    //[SerializeField] private Button sfxButton;
-    //[SerializeField] private Button musicButton;
+
+    public static OptionsUI Instance { get; private set; }
+
+    [SerializeField] private Button closeButton;
     [SerializeField] private TextMeshProUGUI sfxText;
     [SerializeField] private TextMeshProUGUI musicText;
     [SerializeField] private Button sfxIncreaseButton;
@@ -18,16 +21,11 @@ public class OptionsUI : MonoBehaviour
 
     private void Awake()
     {
-        //sfxButton.onClick.AddListener(() =>
-        //{
-        //    SoundManager.Instance.ChangeVolume();
-        //    UpdateVisual();
-        //});
-        //musicButton.onClick.AddListener(() =>
-        //{
-        //    MusicManager.Instance.ChangeVolume();
-        //    UpdateVisual();
-        //});
+        Instance = this;
+        closeButton.onClick.AddListener(() =>
+        {
+            Hide();
+        });
 
         //SFX
         sfxIncreaseButton.onClick.AddListener(() =>
@@ -55,11 +53,28 @@ public class OptionsUI : MonoBehaviour
 
     private void Start()
     {
+        KitchenGameManager.Instance.OnGameUnpaused += KitchenGameManager_OnGameUnpaused;
+        Hide();
         UpdateVisual();
     }
+
+    private void KitchenGameManager_OnGameUnpaused(object sender, EventArgs e)
+    {
+        Hide();
+    }
+
     private void UpdateVisual()
     {
         sfxText.text = "SFX: " + Mathf.Round(SoundManager.Instance.GetVolume() * 10f);
         musicText.text = "Music: " + Mathf.Round(MusicManager.Instance.GetVolume() * 10f);
+    }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
+    }
+    private void Hide()
+    {
+        gameObject.SetActive(false);
     }
 }

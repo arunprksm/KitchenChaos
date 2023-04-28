@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 
 public class MusicManager : MonoBehaviour
 {
+    private const string PLAYER_PREFS_MUSIC_VOLUME = "MusicVolume";
 
 
     public static MusicManager Instance { get; private set; }
@@ -19,16 +20,9 @@ public class MusicManager : MonoBehaviour
     {
         Instance = this;
         audioSource = GetComponent<AudioSource>();
+        volume = PlayerPrefs.GetFloat(PLAYER_PREFS_MUSIC_VOLUME, 0.3f);
+        audioSource.volume = volume;
     }
-    //public void ChangeVolume()
-    //{
-    //    volume += 0.1f;
-    //    if (volume > maxVolume)
-    //    {
-    //        volume = 0f;
-    //    }
-    //    audioSource.volume = volume;
-    //}
 
     public void IncreaseVolume()
     {
@@ -39,6 +33,7 @@ public class MusicManager : MonoBehaviour
             volume = 1f;
         }
         audioSource.volume = volume;
+        PlayerPrefs.SetFloat(PLAYER_PREFS_MUSIC_VOLUME, volume);
 
     }
     public void DecreaseVolume()
@@ -50,7 +45,8 @@ public class MusicManager : MonoBehaviour
             volume = 0f;
         }
         audioSource.volume = volume;
-
+        PlayerPrefs.SetFloat(PLAYER_PREFS_MUSIC_VOLUME, volume);
+        PlayerPrefs.Save();
     }
     public float GetVolume()
     {
