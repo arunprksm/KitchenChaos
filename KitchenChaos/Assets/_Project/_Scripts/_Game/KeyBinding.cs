@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class KeyBinding : MonoBehaviour
 {
+
+    [Header("Button Text")]
+    [Space(8)]
     [SerializeField] private TextMeshProUGUI moveUPText;
     [SerializeField] private TextMeshProUGUI moveDownText;
     [SerializeField] private TextMeshProUGUI moveLeftText;
@@ -14,7 +17,12 @@ public class KeyBinding : MonoBehaviour
     [SerializeField] private TextMeshProUGUI interactText;
     [SerializeField] private TextMeshProUGUI interactAltText;
     [SerializeField] private TextMeshProUGUI pauseText;
+    [SerializeField] private TextMeshProUGUI gamePadInteractText;
+    [SerializeField] private TextMeshProUGUI gamePadInteractAltText;
+    [SerializeField] private TextMeshProUGUI gamePadPauseText;
 
+    [Header("Buttons")]
+    [Space(8)]
     [SerializeField] private Button moveUPButton;
     [SerializeField] private Button moveDownButton;
     [SerializeField] private Button moveLeftButton;
@@ -22,6 +30,9 @@ public class KeyBinding : MonoBehaviour
     [SerializeField] private Button interactButton;
     [SerializeField] private Button interactAltButton;
     [SerializeField] private Button pauseButton;
+    [SerializeField] private Button gamePadInteractButton;
+    [SerializeField] private Button gamePadInteractAltButton;
+    [SerializeField] private Button gamePadPauseButton;
 
     [SerializeField] private Transform pressToRebindKeyTransform;
 
@@ -56,6 +67,18 @@ public class KeyBinding : MonoBehaviour
         {
             RebindBinding(GameInput.Binding.Pause);
         });
+        gamePadInteractButton.onClick.AddListener(() =>
+        {
+            RebindBinding(GameInput.Binding.GamePad_Interact);
+        });
+        gamePadInteractAltButton.onClick.AddListener(() =>
+        {
+            RebindBinding(GameInput.Binding.GamePad_Interact_Alt);
+        });
+        gamePadPauseButton.onClick.AddListener(() =>
+        {
+            RebindBinding(GameInput.Binding.GamePad_Pause);
+        });
     }
     private void Start()
     {
@@ -72,6 +95,9 @@ public class KeyBinding : MonoBehaviour
         interactText.text = GameInput.Instance.GetBindingText(GameInput.Binding.Interact);
         interactAltText.text = GameInput.Instance.GetBindingText(GameInput.Binding.Interact_Alt);
         pauseText.text = GameInput.Instance.GetBindingText(GameInput.Binding.Pause);
+        gamePadInteractText.text = GameInput.Instance.GetBindingText(GameInput.Binding.GamePad_Interact);
+        gamePadInteractAltText.text = GameInput.Instance.GetBindingText(GameInput.Binding.GamePad_Interact_Alt);
+        gamePadPauseText.text = GameInput.Instance.GetBindingText(GameInput.Binding.GamePad_Pause);
     }
 
     private void ShowPressToRebindKey()
